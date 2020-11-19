@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel="shortcut icon" href="https://dien16.github.io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://dien16.github.io/favicon.ico" type="image/x-icon">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <div id="content"></div>
+    
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    /**
+     * * https://ipapi.co/json/
+     * * https://extreme-ip-lookup.com/json/
+     * * http://ip-api.com/json
+     * 
+     */
+    let token = '4dd3568fae7d71';
+    axios.get(`https://ipinfo.io/`, {
+        headers: {
+          Authorization: 'Bearer ' + token //the token is a variable which holds the token
+        }
+      })
+      .then(res => {
+        const data = res.data;
+        console.log(data);
+      })
+      .catch(error => {
+       console.log(error)
+      })
+</script>
+</body>
+</html>
